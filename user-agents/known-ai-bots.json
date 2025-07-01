@@ -1,0 +1,107 @@
+[
+  {
+    "name": "PaceghostBot",
+    "userAgent": "PaceghostBot/1.0 (+https://paceghost.io/bot)",
+    "provider": "Paceghost",
+    "description": "Paceghost's own user agent for AI visibility scans and usability analysis.",
+    "documentation": "https://www.paceghost.io/bot"
+  },
+  {
+    "name": "ClaudeBot",
+    "userAgent": "ClaudeBot",
+    "provider": "Anthropic",
+    "description": "The web crawler used by Anthropic to collect training data for Claude models.",
+    "documentation": "https://support.anthropic.com/en/articles/8896518"
+  },
+  {
+    "name": "Google-Extended",
+    "userAgent": "Google-Extended",
+    "provider": "Google",
+    "description": "Controls whether content is used to train Google's generative AI models.",
+    "documentation": "https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers"
+  },
+  {
+    "name": "Applebot-Extended",
+    "userAgent": "Applebot",
+    "provider": "Apple",
+    "description": "Used to control content used in training Apple's foundation models.",
+    "documentation": "https://support.apple.com/en-us/119583"
+  },
+  {
+    "name": "meta-external-agent",
+    "userAgent": "meta-external-agent",
+    "provider": "Meta Platforms, Inc.",
+    "description": "Meta’s crawler for gathering public data to train models like LLaMA.",
+    "documentation": "https://developers.facebook.com/docs/sharing/webmasters/crawler/"
+  },
+  {
+    "name": "Amazonbot",
+    "userAgent": "Amazonbot",
+    "provider": "Amazon",
+    "description": "Amazon’s crawler for general indexing and LLM data purposes.",
+    "documentation": "https://developer.amazon.com/support/amazonbot"
+  },
+  {
+    "name": "Bytespider",
+    "userAgent": "Bytespider",
+    "provider": "ByteDance",
+    "description": "Used by ByteDance to collect public web data for TikTok and AI training.",
+    "documentation": "https://github.com/ayaka14732/Bytespider"
+  },
+  {
+    "name": "cohere-ai",
+    "userAgent": "cohere-ai",
+    "provider": "Cohere",
+    "description": "Crawler dispatched by Cohere to gather training and RAG data.",
+    "documentation": "https://docs.cohere.com/"  // Placeholder, no dedicated crawler page
+  },
+  {
+    "name": "Omgilibot",
+    "userAgent": "omgilibot",
+    "provider": "Inflection AI / Webz.io",
+    "description": "Associated with Inflection AI and Webz.io for multi-purpose web crawling.",
+    "documentation": "https://webz.io/support/faq/general/what-is-omgili/" 
+  },
+  {
+    "name": "PerplexityBot",
+    "userAgent": "PerplexityBot",
+    "provider": "Perplexity AI",
+    "description": "Crawler for Perplexity AI’s conversational answer engine.",
+    "documentation": "https://docs.perplexity.ai/docs/perplexity-bot"
+  },
+  {
+    "name": "YouBot",
+    "userAgent": "YouBot",
+    "provider": "You.com",
+    "description": "Used by You.com to provide answer engine results with citations.",
+    "documentation": "https://about.you.com/youbot/"
+  },
+  {
+    "name": "Cbot",
+    "userAgent": "Cbot",
+    "provider": "Character.ai",
+    "description": "Crawler for Character.ai’s chatbot platform.",
+    "documentation": null
+  },
+  {
+    "name": "CCBot",
+    "userAgent": "CCBot",
+    "provider": "Common Crawl",
+    "description": "Collects massive public web data sets used by researchers and AI companies.",
+    "documentation": "https://commoncrawl.org/ccbot"
+  },
+  {
+    "name": "Diffbot",
+    "userAgent": "Diffbot",
+    "provider": "Diffbot",
+    "description": "AI crawler that turns web content into structured Knowledge Graph data.",
+    "documentation": "https://www.diffbot.com/docs/"
+  },
+  {
+    "name": "DataForSeoBot",
+    "userAgent": "DataForSeoBot",
+    "provider": "DataForSEO",
+    "description": "SEO crawler that builds large web datasets, sometimes used for AI training.",
+    "documentation": "https://dataforseo.com/dataforseo-bot"
+  }
+]
