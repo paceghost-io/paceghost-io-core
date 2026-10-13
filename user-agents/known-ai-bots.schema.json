@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/paceghost-io/paceghost-io-core/blob/main/user-agents/known-ai-bots.schema.json",
+  "title": "Known AI crawlers",
+  "description": "Crawlers, fetchers and robots.txt tokens that AI and search companies document. Each entry cites the operator's own page.",
+  "type": "object",
+  "required": ["updated", "bots"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "updated": { "type": "string", "format": "date", "description": "Date of the last full review of the list." },
+    "bots": { "type": "array", "items": { "$ref": "#/$defs/bot" } }
+  },
+  "$defs": {
+    "bot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "token", "operator", "class", "userAgents", "respectsRobotsTxt", "robotsTxtQuote",
+                   "ipRangesUrl", "webBotAuth", "source", "quote", "readOn", "status", "notes"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1, "description": "Name the operator uses." },
+        "token": { "type": ["string", "null"], "description": "Name for the User-agent line in robots.txt. Null if the operator publishes none." },
+        "operator": { "type": "string", "minLength": 1 },
+        "class": {
+          "type": ["string", "null"],
+          "enum": ["training", "search_index", "user_fetch", "agent", "governance_token", "ads", "seo", "dataset", "other", null],
+          "description": "Main purpose as the operator states it. Null if there is no operator source."
+        },
+        "userAgents": { "type": "array", "items": { "type": "string", "minLength": 1 }, "description": "Full user agent strings as published. Empty if none are published." },
+        "respectsRobotsTxt": { "enum": ["yes", "no", "partly", "not_stated", "not_applicable"] },
+        "robotsTxtQuote": { "type": ["string", "null"], "description": "Sentence from the source that supports respectsRobotsTxt." },
+        "ipRangesUrl": { "type": ["string", "null"], "format": "uri" },
+        "webBotAuth": {
+          "type": ["object", "null"],
+          "additionalProperties": false,
+          "required": ["signatureAgent", "keysUrl"],
+          "properties": {
+            "signatureAgent": { "type": ["string", "null"] },
+            "keysUrl": { "type": ["string", "null"], "format": "uri" }
+          }
+        },
+        "source": {
+          "type": "string",
+          "description": "Operator page that documents the crawler, or the word none.",
+          "anyOf": [ { "const": "none" }, { "pattern": "^https://" } ]
+        },
+        "quote": { "type": ["string", "null"], "description": "Sentence from the source that supports class." },
+        "readOn": { "type": "string", "format": "date" },
+        "status": { "enum": ["active", "retired"] },
+        "notes": { "type": ["string", "null"] }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "source": { "const": "none" } } },
+          "then": { "properties": { "class": { "const": null }, "quote": { "const": null } } },
+          "else": { "properties": { "class": { "type": "string" }, "quote": { "type": "string", "minLength": 1 } } }
+        }
+      ]
+    }
+  }
+}
