@@ -1,107 +1,802 @@
-[
-  {
-    "name": "PaceghostBot",
-    "userAgent": "PaceghostBot/1.0 (+https://paceghost.io/bot)",
-    "provider": "Paceghost",
-    "description": "Paceghost's own user agent for AI visibility scans and usability analysis.",
-    "documentation": "https://www.paceghost.io/bot"
-  },
-  {
-    "name": "ClaudeBot",
-    "userAgent": "ClaudeBot",
-    "provider": "Anthropic",
-    "description": "The web crawler used by Anthropic to collect training data for Claude models.",
-    "documentation": "https://support.anthropic.com/en/articles/8896518"
-  },
-  {
-    "name": "Google-Extended",
-    "userAgent": "Google-Extended",
-    "provider": "Google",
-    "description": "Controls whether content is used to train Google's generative AI models.",
-    "documentation": "https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers"
-  },
-  {
-    "name": "Applebot-Extended",
-    "userAgent": "Applebot",
-    "provider": "Apple",
-    "description": "Used to control content used in training Apple's foundation models.",
-    "documentation": "https://support.apple.com/en-us/119583"
-  },
-  {
-    "name": "meta-external-agent",
-    "userAgent": "meta-external-agent",
-    "provider": "Meta Platforms, Inc.",
-    "description": "Meta’s crawler for gathering public data to train models like LLaMA.",
-    "documentation": "https://developers.facebook.com/docs/sharing/webmasters/crawler/"
-  },
-  {
-    "name": "Amazonbot",
-    "userAgent": "Amazonbot",
-    "provider": "Amazon",
-    "description": "Amazon’s crawler for general indexing and LLM data purposes.",
-    "documentation": "https://developer.amazon.com/support/amazonbot"
-  },
-  {
-    "name": "Bytespider",
-    "userAgent": "Bytespider",
-    "provider": "ByteDance",
-    "description": "Used by ByteDance to collect public web data for TikTok and AI training.",
-    "documentation": "https://github.com/ayaka14732/Bytespider"
-  },
-  {
-    "name": "cohere-ai",
-    "userAgent": "cohere-ai",
-    "provider": "Cohere",
-    "description": "Crawler dispatched by Cohere to gather training and RAG data.",
-    "documentation": "https://docs.cohere.com/"  // Placeholder, no dedicated crawler page
-  },
-  {
-    "name": "Omgilibot",
-    "userAgent": "omgilibot",
-    "provider": "Inflection AI / Webz.io",
-    "description": "Associated with Inflection AI and Webz.io for multi-purpose web crawling.",
-    "documentation": "https://webz.io/support/faq/general/what-is-omgili/" 
-  },
-  {
-    "name": "PerplexityBot",
-    "userAgent": "PerplexityBot",
-    "provider": "Perplexity AI",
-    "description": "Crawler for Perplexity AI’s conversational answer engine.",
-    "documentation": "https://docs.perplexity.ai/docs/perplexity-bot"
-  },
-  {
-    "name": "YouBot",
-    "userAgent": "YouBot",
-    "provider": "You.com",
-    "description": "Used by You.com to provide answer engine results with citations.",
-    "documentation": "https://about.you.com/youbot/"
-  },
-  {
-    "name": "Cbot",
-    "userAgent": "Cbot",
-    "provider": "Character.ai",
-    "description": "Crawler for Character.ai’s chatbot platform.",
-    "documentation": null
-  },
-  {
-    "name": "CCBot",
-    "userAgent": "CCBot",
-    "provider": "Common Crawl",
-    "description": "Collects massive public web data sets used by researchers and AI companies.",
-    "documentation": "https://commoncrawl.org/ccbot"
-  },
-  {
-    "name": "Diffbot",
-    "userAgent": "Diffbot",
-    "provider": "Diffbot",
-    "description": "AI crawler that turns web content into structured Knowledge Graph data.",
-    "documentation": "https://www.diffbot.com/docs/"
-  },
-  {
-    "name": "DataForSeoBot",
-    "userAgent": "DataForSeoBot",
-    "provider": "DataForSEO",
-    "description": "SEO crawler that builds large web datasets, sometimes used for AI training.",
-    "documentation": "https://dataforseo.com/dataforseo-bot"
-  }
-]
+{
+  "$schema": "./known-ai-bots.schema.json",
+  "updated": "2026-10-13",
+  "bots": [
+    {
+      "name": "GPTBot",
+      "token": "GPTBot",
+      "operator": "OpenAI",
+      "class": "training",
+      "userAgents": [
+        "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.4; +https://openai.com/gptbot"
+      ],
+      "respectsRobotsTxt": "yes",
+      "robotsTxtQuote": "OpenAI uses OAI-SearchBot and GPTBot robots.txt tags to enable webmasters to manage how their sites and content work with AI.",
+      "ipRangesUrl": "https://openai.com/gptbot.json",
+      "webBotAuth": null,
+      "source": "https://developers.openai.com/api/docs/bots",
+      "quote": "It is used to crawl content that may be used in training our generative AI foundation models.",
+      "readOn": "2026-10-13",
+      "status": "active",
+      "notes": "The vendor gives the user agent as an example. The version number can change."
+    },
+    {
+      "name": "OAI-SearchBot",
+      "token": "OAI-SearchBot",
+      "operator": "OpenAI",
+      "class": "search_index",
+      "userAgents": [
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36; compatible; OAI-SearchBot/1.4; +https://openai.com/searchbot"
+      ],
+      "respectsRobotsTxt": "yes",
+      "robotsTxtQuote": "Sites that are opted out of OAI-SearchBot will not be shown in ChatGPT search answers, though can still appear as navigational links.",
+      "ipRangesUrl": "https://openai.com/searchbot.json",
+      "webBotAuth": null,
+      "source": "https://developers.openai.com/api/docs/bots",
+      "quote": "OAI-SearchBot is used to surface websites in search results in ChatGPT's search features.",
+      "readOn": "2026-10-13",
+      "status": "active",
+      "notes": "The vendor gives the user agent as an example. The version number can change."
+    },
+    {
+      "name": "ChatGPT-User",
+      "token": "ChatGPT-User",
+      "operator": "OpenAI",
+      "class": "user_fetch",
+      "userAgents": [
+        "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot"
+      ],
+      "respectsRobotsTxt": "partly",
+      "robotsTxtQuote": "Because these actions are initiated by a user, robots.txt rules may not apply.",
+      "ipRangesUrl": "https://openai.com/chatgpt-user.json",
+      "webBotAuth": null,
+      "source": "https://developers.openai.com/api/docs/bots",
+      "quote": "When users ask ChatGPT or a CustomGPT a question, it may visit a web page with a ChatGPT-User agent.",
+      "readOn": "2026-10-13",
+      "status": "active",
+      "notes": null
+    },
+    {
+      "name": "OAI-AdsBot",
+      "token": "OAI-AdsBot",
+      "operator": "OpenAI",
+      "class": "ads",
+      "userAgents": [
+        "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-AdsBot/1.0; +https://openai.com/adsbot"
+      ],
+      "respectsRobotsTxt": "not_stated",
+      "robotsTxtQuote": null,
+      "ipRangesUrl": "https://openai.com/adsbot.json",
+      "webBotAuth": null,
+      "source": "https://developers.openai.com/api/docs/bots",
+      "quote": "OAI-AdsBot is used to validate the safety of web pages submitted as ads on ChatGPT.",
+      "readOn": "2026-10-13",
+      "status": "active",
+      "notes": "Visits only pages submitted as ads. The vendor does not say whether it reads robots.txt."
+    },
+    {
+      "name": "ChatGPT Agent (Cloud browser)",
+      "token": null,
+      "operator": "OpenAI",
+      "class": "agent",
+      "userAgents": [],
+      "respectsRobotsTxt": "not_stated",
+      "robotsTxtQuote": null,
+      "ipRangesUrl": null,
+      "webBotAuth": {
+        "signatureAgent": "https://chatgpt.com",
+        "keysUrl": "https://chatgpt.com/.well-known/http-message-signatures-directory"
+      },
+      "source": "https://help.openai.com/en/articles/11845367-chatgpt-works-cloud-browser-allowlisting",
+      "quote": "ChatGPT Work's Cloud browser uses Web Bot Auth to sign outbound HTTP requests, allowing website operators to verify that requests genuinely originate from ChatGPT.",
+      "readOn": "2026-10-13",
+      "status": "active",
+      "notes": "No robots.txt token and no user agent string are published. Identify it by the signed Signature-Agent header."
+    },
+    {
+      "name": "ClaudeBot",
+      "token": "ClaudeBot",
+      "operator": "Anthropic",
+      "class": "training",
+      "userAgents": [],
+      "respectsRobotsTxt": "yes",
+      "robotsTxtQuote": "Anthropic's Bots respect \"do not crawl\" signals by honoring industry standard directives in robots.txt.",
+      "ipRangesUrl": "https://claude.com/crawling/bots.json",
+      "webBotAuth": null,
+      "source": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler",
+      "quote": "ClaudeBot helps enhance the utility and safety of our generative AI models by collecting web content that could potentially contribute to their training.",
+      "readOn": "2026-10-13",
+      "status": "active",
+      "notes": "The vendor does not publish a full user agent string."
+    },
+    {
+      "name": "Claude-SearchBot",
+      "token": "Claude-SearchBot",
+      "operator": "Anthropic",
+      "class": "search_index",
+      "userAgents": [],
+      "respectsRobotsTxt": "yes",
+      "robotsTxtQuote": "Anthropic's Bots respect \"do not crawl\" signals by honoring industry standard directives in robots.txt.",
+      "ipRangesUrl": "https://claude.com/crawling/bots.json",
+      "webBotAuth": null,
+      "source": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler",
+      "quote": "Claude-SearchBot navigates the web to improve search result quality for users.",
+      "readOn": "2026-10-13",
+      "status": "active",
+      "notes": "The vendor does not publish a full user agent string."
+    },
+    {
+      "name": "Claude-User",
+      "token": "Claude-User",
+      "operator": "Anthropic",
+      "class": "user_fetch",
+      "userAgents": [],
+      "respectsRobotsTxt": "yes",
+      "robotsTxtQuote": "Anthropic's Bots respect \"do not crawl\" signals by honoring industry standard directives in robots.txt.",
+      "ipRangesUrl": "https://claude.com/crawling/bots.json",
+      "webBotAuth": null,
+      "source": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler",
+      "quote": "When individuals ask questions to Claude, it may access websites using a Claude-User agent.",
+      "readOn": "2026-10-13",
+      "status": "active",
+      "notes": "The vendor does not publish a full user agent string."
+    },
+    {
+      "name": "PerplexityBot",
+      "token": "PerplexityBot",
+      "operator": "Perplexity",
+      "class": "search_index",
+      "userAgents": [
+        "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; PerplexityBot/1.0; +https://perplexity.ai/perplexitybot)"
+      ],
+      "respectsRobotsTxt": "yes",
+      "robotsTxtQuote": "Webmasters can use the following robots.txt tags to manage how their sites and content interact with Perplexity.",
+      "ipRangesUrl": "https://www.perplexity.com/perplexitybot.json",
+      "webBotAuth": null,
+      "source": "https://docs.perplexity.ai/guides/bots",
+      "quote": "PerplexityBot is designed to surface and link websites in search results on Perplexity. It is not used to crawl content for AI foundation models.",
+      "readOn": "2026-10-13",
+      "status": "active",
+      "notes": null
+    },
+    {
+      "name": "Perplexity-User",
+      "token": "Perplexity-User",
+      "operator": "Perplexity",
+      "class": "user_fetch",
+      "userAgents": [
+        "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Perplexity-User/1.0; +https://perplexity.ai/perplexity-user)"
+      ],
+      "respectsRobotsTxt": "no",
+      "robotsTxtQuote": "Since a user requested the fetch, this fetcher generally ignores robots.txt rules.",
+      "ipRangesUrl": "https://www.perplexity.com/perplexity-user.json",
+      "webBotAuth": null,
+      "source": "https://docs.perplexity.ai/guides/bots",
+      "quote": "When users ask Perplexity a question, it might visit a web page to help provide an accurate answer and include a link to the page in its response.",
+      "readOn": "2026-10-13",
+      "status": "active",
+      "notes": null
+    },
+    {
+      "name": "Googlebot",
+      "token": "Googlebot",
+      "operator": "Google",
+      "class": "search_index",
+      "userAgents": [
+        "Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/W.X.Y.Z Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
+        "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Googlebot/2.1; +http://www.google.com/bot.html) Chrome/W.X.Y.Z Safari/537.36"
+      ],
+      "respectsRobotsTxt": "yes",
+      "robotsTxtQuote": "They always obey robots.txt rules when crawling automatically.",
+      "ipRangesUrl": "https://developers.google.com/static/crawling/ipranges/common-crawlers.json",
+      "webBotAuth": null,
+      "source": "https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers",
+      "quote": "Crawling preferences addressed to the Googlebot user agent affect Google Search (including Discover and all Google Search features), as well as other products such as Google Images, Google Video, Google News, and Discover.",
+      "readOn": "2026-10-13",
+      "status": "active",
+      "notes": "Chrome/W.X.Y.Z is a placeholder for the current Chrome version."
+    },
+    {
+      "name": "Google-Extended",
+      "token": "Google-Extended",
+      "operator": "Google",
+      "class": "governance_token",
+      "userAgents": [],
+      "respectsRobotsTxt": "not_applicable",
+      "robotsTxtQuote": "Google-Extended does not impact a site's inclusion in Google Search nor is it used as a ranking signal in Google Search.",
+      "ipRangesUrl": null,
+      "webBotAuth": null,
+      "source": "https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers",
+      "quote": "Google-Extended is a standalone product token that web publishers can use to manage whether content Google crawls from their sites may be used for training future generations of Gemini models that power Gemini Apps and Vertex AI API for Gemini and for grounding (providing content from the Google Search index to the model at prompt time to improve factuality and relevancy) in Gemini Apps and Grounding with Google Search on Vertex AI.",
+      "readOn": "2026-10-13",
+      "status": "active",
+      "notes": "Has no user agent of its own. Google crawls with its existing user agents and reads this token as a rule."
+    },
+    {
+      "name": "GoogleOther",
+      "token": "GoogleOther",
+      "operator": "Google",
+      "class": "other",
+      "userAgents": [
+        "Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/W.X.Y.Z Mobile Safari/537.36 (compatible; GoogleOther)",
+        "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; GoogleOther) Chrome/W.X.Y.Z Safari/537.36"
+      ],
+      "respectsRobotsTxt": "yes",
+      "robotsTxtQuote": "They always obey robots.txt rules when crawling automatically.",
+      "ipRangesUrl": "https://developers.google.com/static/crawling/ipranges/common-crawlers.json",
+      "webBotAuth": null,
+      "source": "https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers",
+      "quote": "GoogleOther is the generic crawler that may be used by various product teams for fetching publicly accessible content from sites.",
+      "readOn": "2026-10-13",
+      "status": "active",
+      "notes": null
+    },
+    {
+      "name": "Google-CloudVertexBot",
+      "token": "Google-CloudVertexBot",
+      "operator": "Google",
+      "class": "other",
+      "userAgents": [],
+      "respectsRobotsTxt": "yes",
+      "robotsTxtQuote": "They always obey robots.txt rules when crawling automatically.",
+      "ipRangesUrl": "https://developers.google.com/static/crawling/ipranges/common-crawlers.json",
+      "webBotAuth": null,
+      "source": "https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers",
+      "quote": "Crawling preferences addressed to the Google-CloudVertexBot user agent affect crawls requested by the site owners' for building Vertex AI Agents.",
+      "readOn": "2026-10-13",
+      "status": "active",
+      "notes": "The vendor publishes only a user agent substring: Google-CloudVertexBot."
+    },
+    {
+      "name": "Google-Agent",
+      "token": null,
+      "operator": "Google",
+      "class": "agent",
+      "userAgents": [
+        "Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/W.X.Y.Z Mobile Safari/537.36 (compatible; Google-Agent; +https://developers.google.com/crawling/docs/crawlers-fetchers/google-agent)",
+        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko; compatible; Google-Agent; +https://developers.google.com/crawling/docs/crawlers-fetchers/google-agent) Chrome/W.X.Y.Z Safari/537.36"
+      ],
+      "respectsRobotsTxt": "no",
+      "robotsTxtQuote": "Because the fetch was requested by a user, these fetchers generally ignore robots.txt rules.",
+      "ipRangesUrl": "https://developers.google.com/static/crawling/ipranges/user-triggered-agents.json",
+      "webBotAuth": {
+        "signatureAgent": "https://agent.bot.goog",
+        "keysUrl": null
+      },
+      "source": "https://developers.google.com/crawling/docs/crawlers-fetchers/google-user-triggered-fetchers",
+      "quote": "Google-Agent is used by agents hosted on Google infrastructure to navigate the web and perform actions upon user request.",
+      "readOn": "2026-10-13",
+      "status": "active",
+      "notes": "A user-triggered fetcher with no robots.txt token. Google says it is experimenting with Web Bot Auth for this agent."
+    },
+    {
+      "name": "Google-GeminiNotebook",
+      "token": null,
+      "operator": "Google",
+      "class": "user_fetch",
+      "userAgents": [
+        "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36 (compatible; Google-GeminiNotebook; +https://developers.google.com/crawling/docs/crawlers-fetchers/google-gemininotebook)",
+        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 (compatible; Google-GeminiNotebook; +https://developers.google.com/crawling/docs/crawlers-fetchers/google-gemininotebook)"
+      ],
+      "respectsRobotsTxt": "no",
+      "robotsTxtQuote": "Because the fetch was requested by a user, these fetchers generally ignore robots.txt rules.",
+      "ipRangesUrl": null,
+      "webBotAuth": null,
+      "source": "https://developers.google.com/crawling/docs/crawlers-fetchers/google-user-triggered-fetchers",
+      "quote": "The Gemini Notebook fetcher requests individual URLs that Gemini Notebook users have provided as sources for their projects.",
+      "readOn": "2026-10-13",
+      "status": "active",
+      "notes": "A user-triggered fetcher with no robots.txt token. Former user agent: Google-NotebookLM, supported until August 2026."
+    },
+    {
+      "name": "Bingbot",
+      "token": "bingbot",
+      "operator": "Microsoft",
+      "class": "search_index",
+      "userAgents": [
+        "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm) Chrome/W.X.Y.Z Safari/537.36",
+        "Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)",
+        "Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/W.X.Y.Z Mobile Safari/537.36 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)"
+      ],
+      "respectsRobotsTxt": "yes",
+      "robotsTxtQuote": "Robots.txt files can be configured to tell Bing crawlers how to interact with your website.",
+      "ipRangesUrl": "https://www.bing.com/toolbox/bingbot.json",
+      "webBotAuth": null,
+      "source": "https://www.bing.com/webmasters/help/which-crawlers-does-bing-use-8c184ec0",
+      "quote": "Bingbot is our standard crawler and handles most of our crawling needs each day.",
+      "readOn": "2026-10-13",
+      "status": "active",
+      "notes": "The crawler page does not link the IP list. The list is hosted on bing.com. The page says nothing about Copilot or AI use."
+    },
+    {
+      "name": "Applebot",
+      "token": "Applebot",
+      "operator": "Apple",
+      "class": "search_index",
+      "userAgents": [
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15 (Applebot/0.1; +http://www.apple.com/go/applebot)",
+        "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4.1 Mobile/15E148 Safari/604.1 (Applebot/0.1; +http://www.apple.com/go/applebot)"
+      ],
+      "respectsRobotsTxt": "yes",
+      "robotsTxtQuote": "In addition to following all robots.txt rules and directives, Apple has a secondary user agent, Applebot-Extended, that gives web publishers additional controls over how their website content can be used by Apple.",
+      "ipRangesUrl": "https://search.developer.apple.com/applebot.json",
+      "webBotAuth": null,
+      "source": "https://support.apple.com/en-us/119829",
+      "quote": "The data crawled by Applebot is used to power various features, such as the search technology integrated into many user experiences in Apple's ecosystem including Spotlight, Siri, and Safari.",
+      "readOn": "2026-10-13",
+      "status": "active",
+      "notes": "Apple also says the data may be used to train Apple foundation models. If robots.txt does not name Applebot but names Googlebot, Applebot follows the Googlebot rules."
+    },
+    {
+      "name": "Applebot-Extended",
+      "token": "Applebot-Extended",
+      "operator": "Apple",
+      "class": "governance_token",
+      "userAgents": [],
+      "respectsRobotsTxt": "not_applicable",
+      "robotsTxtQuote": "Applebot-Extended is only used to determine how to use the data crawled by the Applebot user agent.",
+      "ipRangesUrl": null,
+      "webBotAuth": null,
+      "source": "https://support.apple.com/en-us/119829",
+      "quote": "Applebot-Extended does not crawl webpages.",
+      "readOn": "2026-10-13",
+      "status": "active",
+      "notes": "Disallowing it opts content out of training Apple's general purpose foundation models. It does not remove pages from Apple search."
+    },
+    {
+      "name": "Meta-ExternalAgent",
+      "token": "meta-externalagent",
+      "operator": "Meta",
+      "class": "training",
+      "userAgents": [
+        "meta-externalagent/1.1 (+/documentation/sharing/webmasters/web-crawlers)",
+        "meta-externalagent/1.1"
+      ],
+      "respectsRobotsTxt": "yes",
+      "robotsTxtQuote": "In order to block these crawlers, add a disallow for the relevant crawler to robots.txt.",
+      "ipRangesUrl": null,
+      "webBotAuth": null,
+      "source": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/",
+      "quote": "The Meta-ExternalAgent crawler crawls the web for use cases such as training foundation AI models or improving products by indexing content directly.",
+      "readOn": "2026-10-13",
+      "status": "active",
+      "notes": "The vendor page prints the link in the first user agent as a relative path, as shown here. Meta publishes no IP list on this page."
+    },
+    {
+      "name": "Meta-WebIndexer",
+      "token": "meta-webindexer",
+      "operator": "Meta",
+      "class": "search_index",
+      "userAgents": [
+        "meta-webindexer/1.1"
+      ],
+      "respectsRobotsTxt": "yes",
+      "robotsTxtQuote": "In order to block these crawlers, add a disallow for the relevant crawler to robots.txt.",
+      "ipRangesUrl": null,
+      "webBotAuth": null,
+      "source": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/",
+      "quote": "The Meta-WebIndexer crawler navigates the web to improve Meta AI search result quality for users.",
+      "readOn": "2026-10-13",
+      "status": "active",
+      "notes": null
+    },
+    {
+      "name": "Meta-ExternalFetcher",
+      "token": "meta-externalfetcher",
+      "operator": "Meta",
+      "class": "user_fetch",
+      "userAgents": [
+        "meta-externalfetcher/1.1"
+      ],
+      "respectsRobotsTxt": "partly",
+      "robotsTxtQuote": "The Meta-ExternalFetcher crawler may bypass robots.txt because it performs fetches that were requested by the user.",
+      "ipRangesUrl": null,
+      "webBotAuth": null,
+      "source": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/",
+      "quote": "The Meta-ExternalFetcher crawler fetches individual links at a user's request and supports product functions such as evaluating and improving agentic AI capabilities—including helping AI navigate websites to complete tasks for users.",
+      "readOn": "2026-10-13",
+      "status": "active",
+      "notes": null
+    },
+    {
+      "name": "Meta-ExternalAds",
+      "token": "meta-externalads",
+      "operator": "Meta",
+      "class": "ads",
+      "userAgents": [
+        "meta-externalads/1.1"
+      ],
+      "respectsRobotsTxt": "yes",
+      "robotsTxtQuote": "In order to block these crawlers, add a disallow for the relevant crawler to robots.txt.",
+      "ipRangesUrl": null,
+      "webBotAuth": null,
+      "source": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/",
+      "quote": "The Meta-ExternalAds crawler crawls the web for use cases such as improving advertising and other business-related products and services.",
+      "readOn": "2026-10-13",
+      "status": "active",
+      "notes": null
+    },
+    {
+      "name": "FacebookExternalHit",
+      "token": "facebookexternalhit",
+      "operator": "Meta",
+      "class": "other",
+      "userAgents": [
+        "facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)",
+        "facebookexternalhit/1.1"
+      ],
+      "respectsRobotsTxt": "partly",
+      "robotsTxtQuote": "the FacebookExternalHit crawler might bypass robots.txt when performing security or integrity checks, such as checking for malware or malicious content.",
+      "ipRangesUrl": null,
+      "webBotAuth": null,
+      "source": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/",
+      "quote": "The primary purpose of FacebookExternalHit is to crawl the content of an app or website that was shared on one of Meta's family of apps, such as Facebook, Instagram, or Messenger.",
+      "readOn": "2026-10-13",
+      "status": "active",
+      "notes": null
+    },
+    {
+      "name": "Amazonbot",
+      "token": "Amazonbot",
+      "operator": "Amazon",
+      "class": "training",
+      "userAgents": [
+        "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Amazonbot/0.1) Chrome/W.X.Y.Z Safari/537.36"
+      ],
+      "respectsRobotsTxt": "yes",
+      "robotsTxtQuote": "Automated crawling from these listed user agents respects the Robots Exclusion Protocol, honoring the user-agent and the allow/disallow directives.",
+      "ipRangesUrl": "https://developer.amazon.com/amazonbot/ip-addresses/",
+      "webBotAuth": null,
+      "source": "https://developer.amazon.com/amazonbot",
+      "quote": "Amazonbot is used to improve our products and services. This helps us provide more accurate information to customers and may be used to train Amazon AI models.",
+      "readOn": "2026-10-13",
+      "status": "active",
+      "notes": "Training is one stated use among others. The IP list is an HTML page, not JSON."
+    },
+    {
+      "name": "Amzn-SearchBot",
+      "token": "Amzn-SearchBot",
+      "operator": "Amazon",
+      "class": "search_index",
+      "userAgents": [
+        "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Amzn-SearchBot/0.1) Chrome/W.X.Y.Z Safari/537.36"
+      ],
+      "respectsRobotsTxt": "yes",
+      "robotsTxtQuote": "Automated crawling from these listed user agents respects the Robots Exclusion Protocol, honoring the user-agent and the allow/disallow directives.",
+      "ipRangesUrl": "https://developer.amazon.com/amazonbot/searchbot-ip-addresses/",
+      "webBotAuth": null,
+      "source": "https://developer.amazon.com/amazonbot",
+      "quote": "Amzn-SearchBot is used to improve search experiences in Amazon products and services.",
+      "readOn": "2026-10-13",
+      "status": "active",
+      "notes": "Amazon says it does not crawl content for generative AI model training. If robots.txt does not name it, it follows the rules for other search bots."
+    },
+    {
+      "name": "Amzn-User",
+      "token": "Amzn-User",
+      "operator": "Amazon",
+      "class": "user_fetch",
+      "userAgents": [
+        "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Amzn-User/0.1) Chrome/W.X.Y.Z Safari/537.36"
+      ],
+      "respectsRobotsTxt": "partly",
+      "robotsTxtQuote": "Because actions taken by Amzn-User can be initiated by a user, it may not follow all robots.txt directives.",
+      "ipRangesUrl": "https://developer.amazon.com/amazonbot/live-ip-addresses/",
+      "webBotAuth": null,
+      "source": "https://developer.amazon.com/amazonbot",
+      "quote": "Amzn-User supports user actions, such as responding to Alexa queries that require up-to-date information.",
+      "readOn": "2026-10-13",
+      "status": "active",
+      "notes": null
+    },
+    {
+      "name": "DuckAssistBot",
+      "token": "DuckAssistBot",
+      "operator": "DuckDuckGo",
+      "class": "search_index",
+      "userAgents": [
+        "DuckAssistBot/1.2; (+http://duckduckgo.com/duckassistbot.html)"
+      ],
+      "respectsRobotsTxt": "yes",
+      "robotsTxtQuote": "Once you've updated the file to disallow the DuckAssistBot user agent, the change will take effect after 72 hours and DuckAssistBot will stop crawling your site.",
+      "ipRangesUrl": "https://duckduckgo.com/duckassistbot.json",
+      "webBotAuth": null,
+      "source": "https://duckduckgo.com/duckduckgo-help-pages/results/duckassistbot",
+      "quote": "DuckAssistBot is a web crawler for DuckDuckGo Search that crawls pages in real-time for our AI-assisted answers, which prominently cite their sources. This data is not used in any way to train AI models.",
+      "readOn": "2026-10-13",
+      "status": "active",
+      "notes": null
+    },
+    {
+      "name": "YouBot",
+      "token": "YouBot",
+      "operator": "You.com",
+      "class": "search_index",
+      "userAgents": [
+        "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; YouBot/1.0; +https://docs.you.com/youbot; env:prod) Chrome/X.X.X.X Safari/537.36"
+      ],
+      "respectsRobotsTxt": "yes",
+      "robotsTxtQuote": "It respects robots.txt directives and crawl rate preferences to ensure minimal impact on web servers while maintaining comprehensive coverage of the web.",
+      "ipRangesUrl": null,
+      "webBotAuth": {
+        "signatureAgent": null,
+        "keysUrl": "https://you.com/.well-known/http-message-signatures-directory"
+      },
+      "source": "https://docs.you.com/youbot",
+      "quote": "YouBot is the web crawler that powers the You.com search engine.",
+      "readOn": "2026-10-13",
+      "status": "active",
+      "notes": "The vendor publishes one IP range in the page text, 68.67.112.0/24, not as a file."
+    },
+    {
+      "name": "Brave Search crawler",
+      "token": null,
+      "operator": "Brave",
+      "class": "search_index",
+      "userAgents": [],
+      "respectsRobotsTxt": "yes",
+      "robotsTxtQuote": "However, if a domain or page is not crawlable by Googlebot, then Brave Search's bot will not crawl it either.",
+      "ipRangesUrl": null,
+      "webBotAuth": null,
+      "source": "https://search.brave.com/help/brave-search-crawler",
+      "quote": "Like any other search engine, Brave search has a crawler to discover new pages and index their content.",
+      "readOn": "2026-10-13",
+      "status": "active",
+      "notes": "Brave publishes no robots.txt token and no user agent. It follows the robots.txt rules for Googlebot."
+    },
+    {
+      "name": "MistralAI-Training",
+      "token": "MistralAI-Training",
+      "operator": "Mistral AI",
+      "class": "training",
+      "userAgents": [
+        "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; MistralAI-Training/1.0; +https://docs.mistral.ai/robots)"
+      ],
+      "respectsRobotsTxt": "yes",
+      "robotsTxtQuote": "Webmasters can disallow this user agent in their robots.txt file.",
+      "ipRangesUrl": null,
+      "webBotAuth": null,
+      "source": "https://docs.mistral.ai/robots",
+      "quote": "MistralAI-Training crawls web content to help build datasets for training Mistral generative AI models.",
+      "readOn": "2026-10-13",
+      "status": "active",
+      "notes": null
+    },
+    {
+      "name": "MistralAI-Index",
+      "token": "MistralAI-Index",
+      "operator": "Mistral AI",
+      "class": "search_index",
+      "userAgents": [
+        "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; MistralAI-Index/1.0; +https://docs.mistral.ai/robots)"
+      ],
+      "respectsRobotsTxt": "not_stated",
+      "robotsTxtQuote": null,
+      "ipRangesUrl": "https://mistral.ai/mistralai-index-ips.json",
+      "webBotAuth": null,
+      "source": "https://docs.mistral.ai/robots",
+      "quote": "MistralAI-Index is for automated crawling of the web for indexing purposes only.",
+      "readOn": "2026-10-13",
+      "status": "active",
+      "notes": "Mistral says content it crawls is not used for generative AI training."
+    },
+    {
+      "name": "MistralAI-User",
+      "token": "MistralAI-User",
+      "operator": "Mistral AI",
+      "class": "user_fetch",
+      "userAgents": [
+        "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; MistralAI-User/1.0; +https://docs.mistral.ai/robots)"
+      ],
+      "respectsRobotsTxt": "yes",
+      "robotsTxtQuote": "MistralAI-User governs which sites these user requests can be made to.",
+      "ipRangesUrl": "https://mistral.ai/mistralai-user-ips.json",
+      "webBotAuth": null,
+      "source": "https://docs.mistral.ai/robots",
+      "quote": "When users ask Vibe a question, it may visit a web page to help answer and include a link to the source in its response.",
+      "readOn": "2026-10-13",
+      "status": "active",
+      "notes": null
+    },
+    {
+      "name": "CCBot",
+      "token": "CCBot",
+      "operator": "Common Crawl",
+      "class": "dataset",
+      "userAgents": [
+        "CCBot/2.0 (https://commoncrawl.org/faq/)"
+      ],
+      "respectsRobotsTxt": "yes",
+      "robotsTxtQuote": "To prevent Common Crawl from crawling your website, include the following in your robots.txt",
+      "ipRangesUrl": "https://index.commoncrawl.org/ccbot.json",
+      "webBotAuth": null,
+      "source": "https://commoncrawl.org/ccbot",
+      "quote": "Common Crawl is a non-profit foundation founded with the goal of democratizing access to web information by producing and maintaining an open repository of web crawl data that is universally accessible and analyzable by anyone.",
+      "readOn": "2026-10-13",
+      "status": "active",
+      "notes": "The vendor page does not name AI training. Third parties use the open dataset for many purposes."
+    },
+    {
+      "name": "Diffbot",
+      "token": "Diffbot",
+      "operator": "Diffbot",
+      "class": "search_index",
+      "userAgents": [],
+      "respectsRobotsTxt": "partly",
+      "robotsTxtQuote": "By default Diffbot's web crawls adhere to a site's robots.txt instructions, including the disallow and crawl-delay directives.",
+      "ipRangesUrl": null,
+      "webBotAuth": null,
+      "source": "https://docs.diffbot.com/docs/does-crawl-respect-robotstxt",
+      "quote": "General, proactive web crawling for building a general search engine.",
+      "readOn": "2026-10-13",
+      "status": "active",
+      "notes": "Diffbot says the crawler is not used for AI training. It can ignore robots.txt when a partnership or agreement with the site exists."
+    },
+    {
+      "name": "Diffbot-User",
+      "token": "Diffbot-User",
+      "operator": "Diffbot",
+      "class": "user_fetch",
+      "userAgents": [],
+      "respectsRobotsTxt": "not_stated",
+      "robotsTxtQuote": null,
+      "ipRangesUrl": null,
+      "webBotAuth": null,
+      "source": "https://docs.diffbot.com/docs/does-crawl-respect-robotstxt",
+      "quote": "This is used by requests originating on behalf of a human user browsing a URL using Diffbot software, in response to their input.",
+      "readOn": "2026-10-13",
+      "status": "active",
+      "notes": null
+    },
+    {
+      "name": "DataForSeoBot",
+      "token": "DataForSeoBot",
+      "operator": "DataForSEO",
+      "class": "seo",
+      "userAgents": [
+        "Mozilla/5.0 (compatible; DataForSeoBot; +https://dataforseo.com/dataforseo-bot)"
+      ],
+      "respectsRobotsTxt": "yes",
+      "robotsTxtQuote": "Our bot supports your robots.txt settings, explicitely identifies itself and has an official moniker.",
+      "ipRangesUrl": null,
+      "webBotAuth": null,
+      "source": "https://dataforseo.com/dataforseo-bot",
+      "quote": "DataForSEO Bot is constantly crawling the web to add new links to our backlink database and check links that are already included.",
+      "readOn": "2026-10-13",
+      "status": "active",
+      "notes": "The vendor lists its IP subnets in the page text, not as a file."
+    },
+    {
+      "name": "Webzio",
+      "token": "Webzio",
+      "operator": "Webz.io",
+      "class": "dataset",
+      "userAgents": [],
+      "respectsRobotsTxt": "yes",
+      "robotsTxtQuote": "The Webzio Duo meticulously adheres to robots.txt exclusions.",
+      "ipRangesUrl": null,
+      "webBotAuth": null,
+      "source": "https://webz.io/bot.html",
+      "quote": "This bot crawls websites, meticulously organizing and structuring valuable content.",
+      "readOn": "2026-10-13",
+      "status": "active",
+      "notes": "The vendor page is a blog post from 2024-07-17. It gives no user agent string."
+    },
+    {
+      "name": "Webzio-extended",
+      "token": "Webzio-extended",
+      "operator": "Webz.io",
+      "class": "governance_token",
+      "userAgents": [],
+      "respectsRobotsTxt": "yes",
+      "robotsTxtQuote": "The Webzio Duo meticulously adheres to robots.txt exclusions.",
+      "ipRangesUrl": null,
+      "webBotAuth": null,
+      "source": "https://webz.io/bot.html",
+      "quote": "Webzio-extended then goes a step further by tagging the data as usable or not usable for AI/ML training.",
+      "readOn": "2026-10-13",
+      "status": "active",
+      "notes": "Works on data that Webzio already collected. The vendor gives no user agent string."
+    },
+    {
+      "name": "Omgilibot",
+      "token": "omgilibot",
+      "operator": "Webz.io",
+      "class": "dataset",
+      "userAgents": [],
+      "respectsRobotsTxt": "not_stated",
+      "robotsTxtQuote": null,
+      "ipRangesUrl": null,
+      "webBotAuth": null,
+      "source": "https://webz.io/bot.html",
+      "quote": "Omgilibot served us well, connecting your software applications with the masses of insightful and structured content from across the web.",
+      "readOn": "2026-10-13",
+      "status": "retired",
+      "notes": "The vendor replaced it with Webzio and Webzio-extended (blog post of 2024-07-17)."
+    },
+    {
+      "name": "Bytespider",
+      "token": "Bytespider",
+      "operator": "ByteDance",
+      "class": null,
+      "userAgents": [],
+      "respectsRobotsTxt": "not_stated",
+      "robotsTxtQuote": null,
+      "ipRangesUrl": null,
+      "webBotAuth": null,
+      "source": "none",
+      "quote": null,
+      "readOn": "2026-10-13",
+      "status": "active",
+      "notes": "No vendor page found. Third-party lists disagree about its purpose and its robots.txt behavior."
+    },
+    {
+      "name": "cohere-ai",
+      "token": "cohere-ai",
+      "operator": "Cohere",
+      "class": null,
+      "userAgents": [],
+      "respectsRobotsTxt": "not_stated",
+      "robotsTxtQuote": null,
+      "ipRangesUrl": null,
+      "webBotAuth": null,
+      "source": "none",
+      "quote": null,
+      "readOn": "2026-10-13",
+      "status": "active",
+      "notes": "No vendor page names this token. Cohere's crawler page (https://docs.cohere.com/docs/cohere-web-crawlers) lists no bots and says Cohere does not crawl to train generative AI models at this time."
+    },
+    {
+      "name": "cohere-training-data-crawler",
+      "token": "cohere-training-data-crawler",
+      "operator": "Cohere",
+      "class": null,
+      "userAgents": [],
+      "respectsRobotsTxt": "not_stated",
+      "robotsTxtQuote": null,
+      "ipRangesUrl": null,
+      "webBotAuth": null,
+      "source": "none",
+      "quote": null,
+      "readOn": "2026-10-13",
+      "status": "active",
+      "notes": "No vendor page names this token. See https://docs.cohere.com/docs/cohere-web-crawlers."
+    },
+    {
+      "name": "Cbot",
+      "token": "Cbot",
+      "operator": "Character.AI",
+      "class": null,
+      "userAgents": [],
+      "respectsRobotsTxt": "not_stated",
+      "robotsTxtQuote": null,
+      "ipRangesUrl": null,
+      "webBotAuth": null,
+      "source": "none",
+      "quote": null,
+      "readOn": "2026-10-13",
+      "status": "active",
+      "notes": "No vendor page found. The earlier paceghost-io-core list had this entry with no source."
+    },
+    {
+      "name": "PaceghostBot",
+      "token": "PaceghostBot",
+      "operator": "Paceghost",
+      "class": "user_fetch",
+      "userAgents": [
+        "PaceghostBot/1.0 (+https://www.paceghost.io/resources/paceghostbot/)",
+        "Mozilla/5.0 (compatible; Paceghost/1.0; +https://www.paceghost.io/resources/paceghostbot/)",
+        "PaceghostBot/1.0 (study; +https://www.paceghost.io/resources/paceghostbot/)"
+      ],
+      "respectsRobotsTxt": "yes",
+      "robotsTxtQuote": "We do not crawl pages blocked by robots.txt",
+      "ipRangesUrl": null,
+      "webBotAuth": null,
+      "source": "https://www.paceghost.io/resources/paceghostbot/",
+      "quote": "This group blocks PaceghostBot completely: it also stops PaceghostBot from reading your pages when a user requests an audit of your site.",
+      "readOn": "2026-10-13",
+      "status": "active",
+      "notes": "First string: crawlability check. Second string: website snapshot. Third string: the public robots.txt study."
+    }
+  ]
+}
