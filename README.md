@@ -56,6 +56,8 @@ The example leaves out some fields. See the JSON file for the full entry.
 
 Paceghost's own crawler is in the list. Its page is [paceghost.io/resources/paceghostbot](https://www.paceghost.io/resources/paceghostbot/).
 
+Paceghost also runs a second bot, `PaceghostResearchBot`. It reads public websites of German companies to find a postal address for one postcard about Paceghost. It follows robots.txt. It is not an AI or search crawler, so it is not in the JSON. Its notice, in German, is at [paceghost.io/researchbot.txt](https://www.paceghost.io/researchbot.txt).
+
 ## Corrections
 
 If an entry is wrong or a crawler is missing, open an issue with a link to the operator's own page.
